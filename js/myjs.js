@@ -11,26 +11,7 @@ let titoloFoto = document.getElementById('titleSuper');
 let testoFoto = document.getElementById('testoSuper');
 
 
-// creazione array con indirizzi foto
-let arrFoto = [
-    'img/01.webp',
-    'img/02.webp',
-    'img/03.webp',
-    'img/04.webp',
-    'img/05.webp',
-];
-
-
-
-// creazione di array descrizione ALT foto
-let arrDescrizione = [
-    'foto spiderman',
-    'immagine gioco zelda',
-    'immagine gioco che non conosco',
-    'immagine gioco gatto',
-    'immagine avengers',
-];
-
+// array di oggetti dei supereroi
 const images = [
     {
         'image': 'img/01.webp',
@@ -61,9 +42,10 @@ const images = [
         'title': "Marvel's Avengers",
         'text': "Marvel's Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.",
         'descrizione': 'foto di Marvel\'s Avengers',
-    },
+    }
 ];
-// individuare il numero di foto per fagli cambiare dimensione 
+
+// contatore per variare la dimensione delle foto laterali 
 let numFoto = 0;
 
 // ciclo per creare immagini da database e inserirle
@@ -99,9 +81,7 @@ images.forEach(superEroe =>{
     card2.src = superEroe.image;
     card.alt = superEroe.descrizione;
     card2.alt = superEroe.descrizione;
-    // aggiungo la descrizione
-    titoloFoto.textContent = superEroe.title;
-    testoFoto.textContent = superEroe.text;
+    
     // lo aggiungo al contenitore
     contFotoPrincipale.append(card);
     contFotoPiccole.append(card2)
@@ -118,7 +98,8 @@ let thumbanils = document.getElementsByClassName('fotoPrincipale2');
 let contatore = 0;
 fotoGrande[contatore].classList.add('active');
 thumbanils[contatore].classList.add('active');
-
+titoloFoto.textContent = images[contatore].title;
+testoFoto.textContent = images[contatore].text;
 
 
 
@@ -126,39 +107,58 @@ thumbanils[contatore].classList.add('active');
 // creazione evento per andare avanti
 bottAvanti.addEventListener('click', () => {
     
-    if(contatore < arrFoto.length -1){
-        fotoGrande[contatore].classList.remove('active')
-        thumbanils[contatore].classList.remove('active')
+    if(contatore < images.length -1){
+        fotoGrande[contatore].classList.remove('active');
+        thumbanils[contatore].classList.remove('active');
         contatore++
-        fotoGrande[contatore].classList.add('active')
-        thumbanils[contatore].classList.add('active')
+        titoloFoto.textContent = images[contatore].title;
+        testoFoto.textContent = images[contatore].text; 
+        fotoGrande[contatore].classList.add('active');
+        thumbanils[contatore].classList.add('active');
     }else{
-        fotoGrande[contatore].classList.remove('active')
-        thumbanils[contatore].classList.remove('active')
-        contatore = 0
-        fotoGrande[contatore].classList.add('active')
-        thumbanils[contatore].classList.add('active')
+        fotoGrande[contatore].classList.remove('active');
+        thumbanils[contatore].classList.remove('active');
+        contatore = 0;
+        titoloFoto.textContent = images[contatore].title;
+        testoFoto.textContent = images[contatore].text; 
+        fotoGrande[contatore].classList.add('active');
+        thumbanils[contatore].classList.add('active');
     }
+    
+    // if(contatore < arrFoto.length -1){
+    //     fotoGrande[contatore].classList.remove('active')
+    //     thumbanils[contatore].classList.remove('active')
+    //     // aggiungo la descrizione
+    //     contatore++
+    //     fotoGrande[contatore].classList.add('active')
+    //     thumbanils[contatore].classList.add('active')
+    // }else{
+    //     fotoGrande[contatore].classList.remove('active')
+    //     thumbanils[contatore].classList.remove('active')
+    //     contatore = 0
+    //     fotoGrande[contatore].classList.add('active')
+    //     thumbanils[contatore].classList.add('active')
+    // }
 })
 
 // creazione evento per andare indietro
-bottIndietro.addEventListener('click', () => {
+// bottIndietro.addEventListener('click', () => {
     
-    if(contatore === 0){
-        fotoGrande[contatore].classList.remove('active')
-        thumbanils[contatore].classList.remove('active') 
-        contatore = arrFoto.length - 1
-        fotoGrande[contatore].classList.add('active')
-        thumbanils[contatore].classList.add('active')
-    }else{
-        fotoGrande[contatore].classList.remove('active')
-        thumbanils[contatore].classList.remove('active') 
-        contatore--
-        fotoGrande[contatore].classList.add('active')
-        thumbanils[contatore].classList.add('active')
-    }
+//     if(contatore === 0){
+//         fotoGrande[contatore].classList.remove('active')
+//         thumbanils[contatore].classList.remove('active') 
+//         contatore = arrFoto.length - 1
+//         fotoGrande[contatore].classList.add('active')
+//         thumbanils[contatore].classList.add('active')
+//     }else{
+//         fotoGrande[contatore].classList.remove('active')
+//         thumbanils[contatore].classList.remove('active') 
+//         contatore--
+//         fotoGrande[contatore].classList.add('active')
+//         thumbanils[contatore].classList.add('active')
+//     }
         
         
         
    
-})
+// })
