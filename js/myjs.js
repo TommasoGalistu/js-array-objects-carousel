@@ -124,41 +124,30 @@ bottAvanti.addEventListener('click', () => {
         fotoGrande[contatore].classList.add('active');
         thumbanils[contatore].classList.add('active');
     }
-    
-    // if(contatore < arrFoto.length -1){
-    //     fotoGrande[contatore].classList.remove('active')
-    //     thumbanils[contatore].classList.remove('active')
-    //     // aggiungo la descrizione
-    //     contatore++
-    //     fotoGrande[contatore].classList.add('active')
-    //     thumbanils[contatore].classList.add('active')
-    // }else{
-    //     fotoGrande[contatore].classList.remove('active')
-    //     thumbanils[contatore].classList.remove('active')
-    //     contatore = 0
-    //     fotoGrande[contatore].classList.add('active')
-    //     thumbanils[contatore].classList.add('active')
-    // }
 })
 
 // creazione evento per andare indietro
-// bottIndietro.addEventListener('click', () => {
+bottIndietro.addEventListener('click', () => {
     
-//     if(contatore === 0){
-//         fotoGrande[contatore].classList.remove('active')
-//         thumbanils[contatore].classList.remove('active') 
-//         contatore = arrFoto.length - 1
-//         fotoGrande[contatore].classList.add('active')
-//         thumbanils[contatore].classList.add('active')
-//     }else{
-//         fotoGrande[contatore].classList.remove('active')
-//         thumbanils[contatore].classList.remove('active') 
-//         contatore--
-//         fotoGrande[contatore].classList.add('active')
-//         thumbanils[contatore].classList.add('active')
-//     }
+    if(contatore === 0){
+        fotoGrande[contatore].classList.remove('active');
+        thumbanils[contatore].classList.remove('active');
+        contatore = images.length -1;
+        titoloFoto.textContent = images[contatore].title;
+        testoFoto.textContent = images[contatore].text; 
+        fotoGrande[contatore].classList.add('active');
+        thumbanils[contatore].classList.add('active');
+    }else{
+        fotoGrande[contatore].classList.remove('active');
+        thumbanils[contatore].classList.remove('active');
+        contatore--;
+        titoloFoto.textContent = images[contatore].title;
+        testoFoto.textContent = images[contatore].text; 
+        fotoGrande[contatore].classList.add('active');
+        thumbanils[contatore].classList.add('active');
+    }
         
         
         
    
-// })
+})
