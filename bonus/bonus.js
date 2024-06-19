@@ -1,0 +1,1 @@
+setInterval(avanti, 3000);
