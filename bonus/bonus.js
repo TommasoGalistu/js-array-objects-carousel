@@ -4,14 +4,27 @@ let reverseButton = document.getElementById('reverse');
 
 
 let clicked = false;
-let startTime = setInterval(avanti, 2000);
+let startTime = setInterval(avanti, 3000);
+let reverseTime;
 if(!clicked){
     startTime
 }
 
 stopButton.addEventListener('click', () => {
-    clearInterval(startTime);
+    if(reverseTime){
+        clearInterval(reverseTime);
+        reverseButton = undefined;
+    }else{
+        clearInterval(startTime);
+    }
+    
+
 });
+
+reverseButton.addEventListener('click', () =>{
+    clearInterval(startTime);
+    reverseTime = setInterval(indietro, 3000);
+})
 
 // start.addEventListener('click', () =>{
     
