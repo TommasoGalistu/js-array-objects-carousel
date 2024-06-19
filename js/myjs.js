@@ -112,7 +112,7 @@ bottIndietro.addEventListener('click', (e) => {e.stopPropagation(); indietro();}
 
 
 function avanti(){
-    console.log(contatore);
+    
     if(contatore < images.length -1){
         fotoGrande[contatore].classList.remove('active');
         thumbanils[contatore].classList.remove('active');
