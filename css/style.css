@@ -85,12 +85,13 @@
     width: 100%;
     height: calc(100% / var(--numFoto));
 }
-.contFotoPiccole img.active{
-    display: block;
-}
+
 
 .contFotoPiccole img.active{
     border: 3px solid rgba(255, 255, 0, 1);
+}
+.contFotoPiccole img:hover{
+    cursor: pointer;
 }
 .buttonContainer{
     display: flex;

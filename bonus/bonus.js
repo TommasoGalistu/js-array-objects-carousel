@@ -38,6 +38,37 @@ start.addEventListener('click', () =>{
 // funzionalità per cliccare sulle foto
 
 contFotoPiccole.addEventListener('click', (event) =>{
-    console.log(event.target)
+    // fermo la riproduzione delle foto
+    clearInterval(startTime);
+    clearInterval(reverseTime);
+    clearInterval(startEvent);
+
+    // disattivo tutte le card
+    let arrayFoto = Array.from(thumbanils);
+    arrayFoto.forEach((element) =>{
+        if(element.classList.value !== 'fotoPrincipale2'){
+            element.classList.remove('active')
+        }
+        
+        
+    });
+    
+    // attivo la carta con il click
+    let cardAttiva = event.target;
+    cardAttiva.classList.add('active');
+
+    // disattivo la foto grande corrente
+    fotoGrande[contatore].classList.remove('active');
+
+    arrayFoto.forEach((element, index ) =>{
+        // cerco la foto attiva e aggiorno tutta le foto e testi
+        if(element.classList.value === 'fotoPrincipale2 active'){
+            contatore = index;
+            titoloFoto.textContent = images[contatore].title;
+            testoFoto.textContent = images[contatore].text; 
+            fotoGrande[contatore].classList.add('active');
+            
+        }
+    })
 })
 

@@ -105,13 +105,14 @@ testoFoto.textContent = images[contatore].text;
 
 
 // creazione evento per andare avanti
-bottAvanti.addEventListener('click', avanti);
+bottAvanti.addEventListener('click', (e) => {e.stopPropagation(); avanti();});
 
 // creazione evento per andare indietro
-bottIndietro.addEventListener('click', indietro);
+bottIndietro.addEventListener('click', (e) => {e.stopPropagation(); indietro();});
 
 
 function avanti(){
+    console.log(contatore);
     if(contatore < images.length -1){
         fotoGrande[contatore].classList.remove('active');
         thumbanils[contatore].classList.remove('active');
@@ -129,6 +130,7 @@ function avanti(){
         fotoGrande[contatore].classList.add('active');
         thumbanils[contatore].classList.add('active');
     }
+    
 };
 
 function indietro(){
