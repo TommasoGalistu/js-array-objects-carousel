@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.contFoto{
+    height: 400px;
+    width: 600px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid white;
+    border-right: 0;
+}
+.freccia{
+    text-align: center;
+    font-size: 2rem;
+    color: black;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 10px;
+}
+
+.freccia i{
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 1rem 1.5rem;
+    border-radius: 50%;
+}
+.freccia i:hover{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.78);
+}
+.contFoto img{
+    display: none;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+.contFoto img.active{
+    display: block;
+    
+}
+
+.contFotoPiccole{
+    height: 400px;
+    width: 300px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    border-left: 0;
+}
+
+
+.contFotoPiccole img{
+    object-fit: cover;
+    width: 100%;
+    height: calc(100% / var(--numFoto));
+    filter: grayscale(80%);
+}
+.contFotoPiccole img.active{
+    display: block;
+}
+
+.contFotoPiccole img.active{
+    filter: none;
+    border: 3px solid rgba(255, 255, 0, 1);
+}
