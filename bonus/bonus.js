@@ -3,13 +3,11 @@ let stopButton = document.getElementById('stop');
 let reverseButton = document.getElementById('reverse');
 
 
-let clicked = false;
+// funzionalità per far partire le foto in automatico
 let startTime = setInterval(avanti, 3000);
 let startEvent;
 let reverseTime;
-if(!clicked){
-    startTime
-}
+
 
 stopButton.addEventListener('click', () => {
     clearInterval(startTime);
@@ -36,4 +34,10 @@ start.addEventListener('click', () =>{
     startEvent = setInterval(avanti, 3000);
 });
 
+
+// funzionalità per cliccare sulle foto
+
+contFotoPiccole.addEventListener('click', (event) =>{
+    console.log(event.target)
+})
 
