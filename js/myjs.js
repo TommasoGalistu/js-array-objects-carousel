@@ -105,8 +105,13 @@ testoFoto.textContent = images[contatore].text;
 
 
 // creazione evento per andare avanti
-bottAvanti.addEventListener('click', () => {
-    
+bottAvanti.addEventListener('click', avanti);
+
+// creazione evento per andare indietro
+bottIndietro.addEventListener('click', indietro);
+
+
+function avanti(){
     if(contatore < images.length -1){
         fotoGrande[contatore].classList.remove('active');
         thumbanils[contatore].classList.remove('active');
@@ -124,11 +129,9 @@ bottAvanti.addEventListener('click', () => {
         fotoGrande[contatore].classList.add('active');
         thumbanils[contatore].classList.add('active');
     }
-})
+};
 
-// creazione evento per andare indietro
-bottIndietro.addEventListener('click', () => {
-    
+function indietro(){
     if(contatore === 0){
         fotoGrande[contatore].classList.remove('active');
         thumbanils[contatore].classList.remove('active');
@@ -146,8 +149,4 @@ bottIndietro.addEventListener('click', () => {
         fotoGrande[contatore].classList.add('active');
         thumbanils[contatore].classList.add('active');
     }
-        
-        
-        
-   
-})
+}
