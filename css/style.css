@@ -93,3 +93,11 @@
 .contFotoPiccole img.active{
     border: 3px solid rgba(255, 255, 0, 1);
 }
+.buttonContainer{
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.5rem;
+}
+.buttonContainer button{
+    padding: 0.3rem 0.5rem;
+}
